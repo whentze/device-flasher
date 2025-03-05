@@ -16,6 +16,11 @@ let
 in
 (pkgs.buildFHSEnv {
   name = "calyxos-device-flashing";
+  targetPkgs = pkgs: [
+    pkgs.unzip
+    pkgs.avbroot
+    pkgs.android-tools
+  ];
   # yes, device-flasher *has* to be in $PWD. no, that's not very pretty.
   runScript = "sh -c 'rm -f ./flasher && cp ${flasher}/bin/device-flasher ./flasher && exec bash'";
 })
