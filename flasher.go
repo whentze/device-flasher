@@ -410,6 +410,7 @@ func flashDevices(devices map[string]string) {
 				errorln(err.Error(), false)
 				return
 			}
+			/*
 			fmt.Println("Locking " + device + " " + serialNumber + " bootloader...")
 			warnln("6. Please use the volume and power keys on the device to lock the bootloader")
 			for i := 0; isNotLocked(serialNumber, device); i++ {
@@ -432,6 +433,7 @@ func flashDevices(devices map[string]string) {
 					return
 				}
 			}
+			*/
 			fmt.Println("Rebooting " + device + " " + serialNumber + "...")
 			platformToolCommand = *fastboot
 			platformToolCommand.Args = append(platformToolCommand.Args, "-s", serialNumber, "reboot")
