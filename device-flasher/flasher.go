@@ -52,7 +52,7 @@ var deviceFactoryFolderMap map[string]string
 var parallel bool
 
 // Set via LDFLAGS, check Makefile
-var version string
+const version string = "1.0"
 
 const OS = runtime.GOOS
 const PLATFORM_TOOLS_VERSION = "33.0.3"
